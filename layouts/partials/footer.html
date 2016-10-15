@@ -1,0 +1,23 @@
+		<footer>
+			{{ .Site.Copyright | safeHTML }}
+			<a href="https://github.com/MarkKeeley/simpleblue">SimpleBlue</a>
+			A <a href="https://gohugo.io/">Hugo</a> theme by Mark Keeley
+			<a href="{{ .RSSlink }}"><i class="fa fa-rss fa-fw"></i>RSS</a>
+		</footer>
+
+		<script>
+			function myFunction() {
+				var x = document.getElementById("myTopnav");
+				if (x.className === "topnav") {
+					x.className += " responsive";
+				} else {
+					x.className = "topnav";
+				}
+			}
+		</script>
+
+		{{ partial "google_analytics.html" . }}
+
+	</body>
+</html>
+

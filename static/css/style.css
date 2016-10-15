@@ -1,0 +1,193 @@
+/*
+Box-sizing for everything. Sanity once again befalls the html lands.
+*/
+* {
+  box-sizing: border-box;
+}
+/*
+Clearfix hack fixes problems that sometimes happen when float things are
+taller than the container. Add this to container to fix it 
+*/
+.clearfix {
+  overflow: auto;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+h1 {
+	/*margin-top: 0rem;*/
+	/*margin-bottom: 0rem;*/
+}
+
+a {
+	color: #3b8bba;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+#header-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #265778; /*#4d8c69;*/
+  overflow: auto;
+}	
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #265778;/*#333;*/
+  max-width: 63em;
+  margin: auto; /* center the div */
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  /*remember this for media queries, change right padding. t, r, b, l*/
+  padding: 0.5em 0.9em 0.5em 0.9em;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+ul.topnav li a:hover,
+ul.topnav li a:focus {background-color: #3b8bba;}
+
+ul.topnav li.icon {display: none;}
+
+ul.topnav li.rss {
+	float: right;
+	/*padding: 0.5em 0.9em 0.5em 0.9em;*/
+}
+
+article {
+	max-width: 63em;
+	margin: auto;
+	border-bottom: 1px solid lightgray;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+article h1 {
+	text-align: center;
+}
+
+article h2 {
+	text-align: center;
+	/*margin-top 0rem;*/
+}
+
+article img {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+footer {
+	max-width: 63em;
+	margin: auto;
+	font-size: 0.7rem;
+	text-align: center;
+}
+
+#pagination {
+	max-width: 63em;
+	margin: auto;
+	text-align: center;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.pagination-link {
+	font-size: 1.7rem;
+}
+
+.pagination-link-disabled {
+	font-size: 1.7rem;
+	color: lightgray;
+}
+
+.prev-next-post {
+	max-width: 63em;
+	margin: auto;
+	border-bottom: 1px solid lightgray;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;	
+}
+
+#prev-next-post-left {
+	display: block;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+#prev-next-post-right {
+	display: block;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+/* Media Query Time
+ *
+ */
+
+@media screen and (min-width: 31em) {
+
+	#prev-next-post-left {
+		/*margin-right: 50%;*/
+		/*background-color: orange;*/
+		float: left;
+		width: 50%;
+		text-align: left;
+	}
+
+	#prev-next-post-right {
+		width: 50%;
+		float: right;
+		text-align: right;
+		/*background-color: purple;*/
+	}
+}
+
+@media screen and (max-width: 41em) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 41em) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+  ul.topnav.responsive li.rss {
+    display: none;
+  }
+}

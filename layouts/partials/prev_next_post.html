@@ -1,0 +1,23 @@
+{{ if or (.Prev) (.Next) }}
+	<div class="prev-next-post clearfix" style="overflow: hidden;">
+		{{ if .PrevInSection }}
+		<div id="prev-next-post-left">
+				<a href="{{ .PrevInSection.Permalink }}"><i class="fa fa-arrow-left fa-fw"></i>{{ .PrevInSection.Title }}</a>
+		</div>
+		{{ end }}
+
+
+		{{ if .NextInSection }}
+		<div id="prev-next-post-right">
+				<a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}<i class="fa fa-arrow-right fa-fw"></i></a>
+		</div>
+		<br>
+
+		{{ end }}
+	</div>
+
+
+
+
+
+{{ end }}

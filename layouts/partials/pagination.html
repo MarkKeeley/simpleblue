@@ -1,0 +1,27 @@
+{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+	{{ $prev := "fa fa-arrow-left"}}
+	{{ $next := "fa fa-arrow-right"}}
+
+	<div id="pagination">
+		Pages {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}<br>
+		{{ if .Paginator.HasPrev }}
+			<a class="pagination-link" href="{{ .Paginator.Prev.URL }}"><i class="fa fa-arrow-left fa-fw"></i>Newer Posts</a> 
+		{{ else }}
+			<span class="pagination-link-disabled">
+				<i class="fa fa-arrow-left fa-fw"></i>Newer Posts
+			</span>
+		{{ end }}
+		&middot;
+		{{ if .Paginator.HasNext }}
+			<a class="pagination-link" href="{{ .Paginator.Next.URL }}">Older Posts<i class="fa fa-arrow-right fa-fw"></i></a>
+		{{ else }}
+			<span class="pagination-link-disabled">
+				Older Posts<i class="fa fa-arrow-right fa-fw"></i>
+			</span>
+		{{ end }}
+			
+			
+			 
+	</div>
+
+{{ end }}
