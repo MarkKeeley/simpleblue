@@ -32,6 +32,10 @@ a:focus {
 	text-decoration: underline;
 }
 
+a:visited {
+  color: #265778;
+}
+
 #header-container {
   margin: 0;
   padding: 0;
@@ -146,11 +150,29 @@ footer {
  *
  */
 
+@media screen and (max-width: 410px) {
+	.pagination-link {
+		font-size: 1.4rem;
+	}
+
+	.pagination-link-disabled {
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	.pagination-link {
+		font-size: 1.0rem;
+	}
+
+	.pagination-link-disabled {
+		font-size: 1.0rem;
+	}
+}
+
 @media screen and (min-width: 31em) {
 
 	#prev-next-post-left {
-		/*margin-right: 50%;*/
-		/*background-color: orange;*/
 		float: left;
 		width: 50%;
 		text-align: left;
@@ -160,7 +182,6 @@ footer {
 		width: 50%;
 		float: right;
 		text-align: right;
-		/*background-color: purple;*/
 	}
 }
 
