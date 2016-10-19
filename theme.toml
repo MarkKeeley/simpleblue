@@ -5,7 +5,7 @@ description = "A minimalist theme for Hugo"
 homepage = "https://github.com/MarkKeeley/simpleblue"
 tags = ["", ""]
 features = ["", ""]
-min_version = 0.17
+min_version = 0.16
 
 [author]
   name = "Mark Keeley"
