@@ -1,7 +1,7 @@
 <article>
 	<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 	{{ partial "post_meta.html" . }}
-	{{ .Summary }}
+	<p>{{ .Summary }}</p>
 	{{ if .Truncated }}
 		<p style="text-align: center;">
 			<a href="{{ .RelPermalink }}">Continue Reading</a>

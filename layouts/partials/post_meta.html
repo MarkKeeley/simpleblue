@@ -1,10 +1,10 @@
-<i class="fa fa-calendar fa-fw"></i><time>{{ with .Site.Params.dateFormat }}{{ $.Date.Format . }}{{ else }}{{ .Date.Format "02 Jan 2006, 15:04" }}{{ end }}</time>
-{{ if isset .Params "author" }}
-	<span style="float: right;"><i class="fa fa-user fa-fw"></i> By {{ .Params.author }}
-	</span><br>
+<i class="fa fa-calendar fa-fw"></i><time>{{ with .Site.Params.dateFormat }}{{ $.Date.Format . }}{{ else }}{{ .Date.Format "02 Jan 2006, 15:04" }}{{ end }}</time><br>
+{{ if and (isset .Params "author") (isset .Site.Params "showauthor") }}
+	<i class="fa fa-user fa-fw"></i> By {{ .Params.author }}
+	<br>
 {{ end -}}
 {{ $baseUrl := .Site.BaseURL }}
-{{ if isset .Params "tags" }}
+{{ if and (isset .Params "tags") (isset .Site.Params "showtags") }}
 	{{ $count := len .Params.tags }}
   	{{ if gt $count 0 }}
 		<i class="fa fa-tags fa-fw"></i>
@@ -12,9 +12,9 @@
     			<a class="post-taxonomy-tag" href="{{ $baseUrl }}tags/{{ . | urlize }}">{{ . }}</a>
 			{{- if lt $k (sub $count 1) }}&nbsp;&#47;{{ end }}
 		{{ end }}
-	{{ end }}
 	{{ end }}<br>
-{{ if isset .Params "topics" }}
+{{ end }}
+{{ if and (isset .Params "topics") (isset .Site.Params "showtopics") }}
 	{{ $count := len .Params.topics }}
   	{{ if gt $count 0 }}
 		<i class="fa fa-folder fa-fw"></i>
