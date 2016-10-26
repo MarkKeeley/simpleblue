@@ -12,6 +12,10 @@ taller than the container. Add this to container to fix it
   overflow: auto;
 }
 
+code {
+	background-color: lightgray;
+}
+
 body {
 	background-color: #fdfdfd;
 }
